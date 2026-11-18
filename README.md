@@ -269,7 +269,48 @@ Optional live scripts are located in `scripts/` and prompt for an explicit `POST
 
 ## Demonstration evidence
 
-See the [`evidence/`](evidence/) directory for screenshots. The live end-to-end test returned five successful platform results on **November 18, 2026**. Links to published content appear in the sample response above; the Discord link requires appropriate server access.
+
+## Demonstration Evidence
+
+The application was successfully tested on November 18, 2026,
+publishing a single message across all five platforms.
+
+### 1. Final End-to-End Integration
+
+The FastAPI `POST /posting` endpoint successfully published
+the message to Telegram, Discord, GitHub Gist, Bluesky,
+and Mastodon concurrently.
+
+**Integration results:**
+- HTTP Status: 200 OK
+- Total Platforms: 5
+- Successful: 5
+- Failed: 0
+
+![Final Integration Success](evidence/final-integration-success.png)
+
+### 2. Automated Testing
+
+The application includes 46 automated tests covering:
+- Input validation
+- Platform API success and failure handling
+- Authentication errors and timeouts
+- Concurrent publishing
+- Independent platform failure handling
+
+![Automated Tests Passed](evidence/all-test-passed.png)
+
+### 3. Individual Platform Evidence
+
+Each platform has two screenshots:
+- API success response
+- Actual published content
+
+[View all platform evidence screenshots](evidence/)
+
+**Note:** Discord publishing succeeds, but public_access
+is false because the demonstration server requires membership.
+
 
 ## Notes and limitations
 
